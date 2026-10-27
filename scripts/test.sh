@@ -11,27 +11,32 @@ echo
 echo "=== CLUSTER ==="
 k3d cluster list
 kubectl get nodes -o wide
+echo
 
 # verif namespaces
 echo "===NAMESPACES==="
 kubectl get namespaces
+echo
 
 # verif pods
 echo "===PODS==="
-kubectl get pods -n argocd
 kubectl get pods -n dev
+echo
 
 # verif deployment
 echo "===DEPLOYMENT==="
 kubectl get deployment -n dev
+echo
 
 # verif service
 echo "===SERVICE==="
 kubectl get service -n dev
+echo
 
 # verif ingress
 echo "===INGRESS==="
 kubectl get ingress -n dev
+echo
 
 
 ################## ARGO CD
@@ -41,12 +46,13 @@ echo
 
 # verif pods argocd
 echo "===PODS==="
-kubectl get nodes -n argocd
+kubectl get pods -n argocd
+echo
 
 # verif application
 echo "===APPLICATION==="
 kubectl get application -n argocd
-kubectl describe application playground -n argocd
+echo
 
 
 ################## RESULT
@@ -55,3 +61,4 @@ echo "=== RESULT ==="
 echo
 
 curl http://localhost:8888/
+echo
