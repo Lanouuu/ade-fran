@@ -60,5 +60,10 @@ echo
 echo "=== RESULT ==="
 echo
 
+# Pour accelerer le rafraichissement par agrocd :
+
+#kubectl annotate application playground -n argocd \
+#  argocd.argoproj.io/refresh=hard --overwrite
+
 curl http://localhost:8888/
 echo
