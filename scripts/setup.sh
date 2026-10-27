@@ -26,7 +26,7 @@ kubectl rollout status statefulset/argocd-application-controller -n argocd --tim
 kubectl apply -f "$CONF_DIR/application.yaml"
 
 # port forward
-kubectl port-forward svc/argocd-server -n argocd 8080:443 >/dev/null 2>&1 &
+kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 
 # mdp
 echo "Interface Argo CD : https://localhost:8080 (utilisateur : admin)"
